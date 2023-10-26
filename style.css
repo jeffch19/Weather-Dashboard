@@ -1,6 +1,5 @@
 
 
-
 /* Navbar */
 .navbar {
   background-color: indigo;
@@ -24,7 +23,9 @@
   display: flex;
   margin-left: 10px;
   margin-right: 30px;
-  
+  max-width: none;
+  margin-top: 10px;
+
 }
 
 /* column with search bar */
@@ -36,6 +37,7 @@
   text-align: center;
 }
 
+/* div for the city and the 5 day forecast */
 .stacking-div {
   width: 75%;
   display: flex;
