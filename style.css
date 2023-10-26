@@ -1,0 +1,19 @@
+
+
+
+/* Navbar */
+.navbar {
+  background-color: indigo;
+  opacity: 1;
+ display: flex;
+ justify-content: center;
+ height: 80px;
+}
+
+.text-white {
+  font-size: 40px;
+}
+
+.navbar-brand {
+  margin-left: 400px;
+}
