@@ -28,6 +28,9 @@
 
 }
 
+.search-for-a-city {
+  font-size: 20px;
+}
 /* column with search bar */
 .search-column {
   width: 25%;
@@ -44,9 +47,18 @@
   flex-direction: column;
   margin: 0 10px;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #e0e0f0;
+  /* border: 1px solid #ddd; */
+  /* background-color: #e0e0f0; */
 }
+
+.capital-weather-display {
+  border: 1px solid black;
+}
+
+
+
+
+
 
 .bottom-div {
   padding: 20px;
@@ -54,3 +66,23 @@
   background-color: #f0f0f0;
   text-align: center;
 }
+
+
+/* 5 day forecast content */
+.forecast-div {
+  display: inline-flex;
+}
+/* boxes containing the forecast */
+.forecast-box {
+  width: 100%; /* Adjust the width as needed */
+  margin: 0 1%; /* Add spacing between the boxes */
+  height: 100px; /* Set a fixed height or adjust as needed */
+  background-color: darkgrey; /* Set the background color to dark grey */
+}
+
+/* size of the 5 day forecast header */
+.boxes {
+  font-size: 20px;
+}
+
+
