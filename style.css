@@ -55,12 +55,16 @@
   border: 1px solid black;
 }
 
+.search-bar{
+  width: 100%;
+}
+
 
 #search-btn {
   margin: 8px 0;
   color: white;
   background-color: blue;
-  border-radius: 10%;
+  border-radius: 3%;
   width: 100%;
 }
 
@@ -79,10 +83,12 @@
 /* buttons with cities */
 .btn-spacing {
   margin: 5px 0;
-  border-radius: 10%;
+  padding: 5px;
   color: black;
   background-color: lightgrey;
   width: 100%;
+  border: none;
+  border-radius: 3%;
 }
 
 
