@@ -56,16 +56,37 @@
 }
 
 
+#search-btn {
+  margin: 8px 0;
+  color: white;
+  background-color: blue;
+  border-radius: 10%;
+  width: 100%;
+}
 
 
-
-
+/* div with the cities */
 .bottom-div {
   padding: 20px;
   border: 1px solid #ddd;
   background-color: #f0f0f0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
 }
+
+/* buttons with cities */
+.btn-spacing {
+  margin: 5px 0;
+  border-radius: 10%;
+  color: black;
+  background-color: lightgrey;
+  width: 100%;
+}
+
+
+
 
 
 /* 5 day forecast content */
