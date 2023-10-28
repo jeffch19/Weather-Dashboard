@@ -3,11 +3,17 @@ $(document).ready(function() {
 
 // API variables
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
-var requestUrl = 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3b8d60dee3567443738880c9e96f75d9'
 var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
+// geo code api
+// http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 
+// 5 day forecase api
+// api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 
 // Initial API call
+function getWeatherData(city) {
+  var requestUrl = 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3b8d60dee3567443738880c9e96f75d9'
+
 fetch (requestUrl)
 .then(function (response) {
   return response.json();
@@ -18,7 +24,17 @@ fetch (requestUrl)
   console.log(data);
 });
 
+// return data?
+// return {
+//   city: city,
+//   date: date,
+//   temperature: data.main.temp 
+//   wind: wind,
+//   humidity: humidity,
+  
+// };
 
+}
 
 
 
