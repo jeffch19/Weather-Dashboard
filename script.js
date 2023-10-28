@@ -1,4 +1,47 @@
+$(document).ready(function() {
 
+
+// API variables
+var apiKey = '3b8d60dee3567443738880c9e96f75d9'
+var requestUrl = 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3b8d60dee3567443738880c9e96f75d9'
+var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
+
+
+// Initial API call
+fetch (requestUrl)
+.then(function (response) {
+  return response.json();
+})
+
+.then(function (data) {
+  console.log ('fetch response \n------');
+  console.log(data);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 
