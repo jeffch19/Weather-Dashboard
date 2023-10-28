@@ -35,8 +35,8 @@
 .search-column {
   width: 25%;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f0f0f0;
+  /* border: 1px solid #ddd;
+  background-color: #f0f0f0; */
   text-align: center;
 }
 
@@ -62,18 +62,23 @@
 
 #search-btn {
   margin: 8px 0;
-  color: white;
-  background-color: blue;
+  color: whitesmoke;
+  background-color: rgba(0, 81, 255, 0.746);
   border-radius: 3%;
   width: 100%;
+  border: none;
+}
+
+#search-btn:hover {
+  cursor: pointer;
 }
 
 
 /* div with the cities */
 .bottom-div {
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f0f0f0;
+  border-top: 1px solid #d3d3d3;
+  /* background-color: #f0f0f0; */
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -91,7 +96,9 @@
   border-radius: 3%;
 }
 
-
+.btn-spacing:hover {
+  cursor: pointer;
+}
 
 
 
