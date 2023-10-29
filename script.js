@@ -7,8 +7,12 @@ const temp = document.getElementById('temp');
 const wind = document.getElementById('wind');
 const humidity = document.getElementById('humidity');
 const currentDate = new Date();
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+const day = currentDate.getDate().toString().padStart(2, '0');
+const year = currentDate.getFullYear();
+
+const formattedDate = `${month}/${day}/${year}`;
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
 var searchBtn = document.getElementById('search-btn');
 // var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
@@ -41,6 +45,38 @@ fetch (requestUrl)
 }
 
 // make 5 day forecast function - use a loop
+// 5 day forecast function 
+
+function getFiveDayForecast(city) {
+  var forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&APPID=' + apiKey + '&units=imperial';
+
+  fetch(forecastUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log('5-day forecast response \n------');
+      console.log(data);
+
+      // Clear the existing forecast boxes
+      var forecastDiv = document.querySelector('.forecast-div');
+      forecastDiv.innerHTML = '';
+
+      // Loop through the forecast data and populate the forecast-box divs
+      for (var i = 0; i < data.list.length; i++) {
+        var forecastData = data.list[i];
+        var forecastBox = document.createElement('div');
+        forecastBox.className = 'forecast-box';
+        forecastBox.textContent = `Temp: ${forecastData.main.temp} °F, Wind: ${forecastData.wind.speed} MPH, Humidity: ${forecastData.main.humidity} %`;
+        forecastDiv.appendChild(forecastBox);
+      }
+    });
+}
+
+
+
+
+
 
 
 searchBtn.addEventListener('click', function(event) { 
@@ -48,6 +84,7 @@ searchBtn.addEventListener('click', function(event) {
 var searchCity = document.querySelector('.search-bar').value;
 document.querySelector('.search-bar').value='';
 getWeatherData(searchCity);
+getFiveDayForecast(searchCity);
 // get 5 day search city
 });
 
