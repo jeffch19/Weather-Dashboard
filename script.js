@@ -2,8 +2,10 @@ $(document).ready(function() {
 
 
 // API variables
+const cityName = document.getElementById('city-name');
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
-var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
+var searchBtn = document.getElementById('search-btn');
+// var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
 // geo code api
 // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 
@@ -12,7 +14,7 @@ var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York
 
 // Initial API call
 function getWeatherData(city) {
-  var requestUrl = 'api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3b8d60dee3567443738880c9e96f75d9'
+  var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID='+apiKey+'&units=imperial'
 
 fetch (requestUrl)
 .then(function (response) {
@@ -22,6 +24,7 @@ fetch (requestUrl)
 .then(function (data) {
   console.log ('fetch response \n------');
   console.log(data);
+  cityName.textContent = data.name;
 });
 
 // return data?
@@ -36,8 +39,16 @@ fetch (requestUrl)
 
 }
 
+// make 5 day forecast function - use a loop
 
 
+searchBtn.addEventListener('click', function(event) { 
+  event.preventDefault();
+var searchCity = document.querySelector('.search-bar').value;
+document.querySelector('.search-bar').value='';
+getWeatherData(searchCity);
+// get 5 day search city
+});
 
 
 
