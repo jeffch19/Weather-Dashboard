@@ -3,6 +3,9 @@ $(document).ready(function() {
 
 // API variables
 const cityName = document.getElementById('city-name');
+const temp = document.getElementById('temp');
+const wind = document.getElementById('wind');
+const humidity = document.getElementById('humidity');
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
 var searchBtn = document.getElementById('search-btn');
 // var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
@@ -25,6 +28,9 @@ fetch (requestUrl)
   console.log ('fetch response \n------');
   console.log(data);
   cityName.textContent = data.name;
+  temp.textContent = data.main.temp;
+  wind.textContent = data.wind.speed;
+  humidity.textContent = data.main.humidity;
 });
 
 // return data?
