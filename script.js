@@ -6,6 +6,9 @@ const cityName = document.getElementById('city-name');
 const temp = document.getElementById('temp');
 const wind = document.getElementById('wind');
 const humidity = document.getElementById('humidity');
+const currentDate = new Date();
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const formattedDate = currentDate.toLocaleDateString('en-US', options);
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
 var searchBtn = document.getElementById('search-btn');
 // var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
@@ -27,21 +30,13 @@ fetch (requestUrl)
 .then(function (data) {
   console.log ('fetch response \n------');
   console.log(data);
-  cityName.textContent = data.name;
-  temp.textContent = data.main.temp;
-  wind.textContent = data.wind.speed;
-  humidity.textContent = data.main.humidity;
+  cityName.textContent = `${data.name} - ${formattedDate}`;
+  temp.textContent = `Temp: ${data.main.temp} °F`;
+  wind.textContent = `Wind: ${data.wind.speed} MPH`;
+  humidity.textContent = `Humidity: ${data.main.humidity} %`;
 });
 
-// return data?
-// return {
-//   city: city,
-//   date: date,
-//   temperature: data.main.temp 
-//   wind: wind,
-//   humidity: humidity,
-  
-// };
+
 
 }
 
