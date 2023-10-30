@@ -64,7 +64,7 @@ function getFiveDayForecast(city) {
 
       // Loop through the forecast data and populate the forecast-box divs
      // Loop through the forecast data for the next 5 days
-for (var i = 0; i < 5; i++) {
+for (var i = 0; i < data.list.length; i+=8) {
   var forecastData = data.list[i];
   var date = new Date(forecastData.dt * 1000); // Convert the timestamp to a Date object
   var formattedDate = date.toDateString();
