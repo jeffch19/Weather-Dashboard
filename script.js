@@ -63,13 +63,23 @@ function getFiveDayForecast(city) {
       forecastDiv.innerHTML = '';
 
       // Loop through the forecast data and populate the forecast-box divs
-      for (var i = 0; i < data.list.length; i++) {
-        var forecastData = data.list[i];
-        var forecastBox = document.createElement('div');
-        forecastBox.className = 'forecast-box';
-        forecastBox.textContent = `${formattedDate} Temp: ${forecastData.main.temp} °F, Wind: ${forecastData.wind.speed} MPH, Humidity: ${forecastData.main.humidity} %`;
-        forecastDiv.appendChild(forecastBox);
-      }
+     // Loop through the forecast data for the next 5 days
+for (var i = 0; i < 5; i++) {
+  var forecastData = data.list[i];
+  var date = new Date(forecastData.dt * 1000); // Convert the timestamp to a Date object
+  var formattedDate = date.toDateString();
+
+  // Create a new div element for the forecast box
+  var forecastBox = document.createElement('div');
+  forecastBox.className = 'forecast-box';
+  
+  // Set the text content to display the formatted date, temperature, wind speed, and humidity
+  forecastBox.textContent = `${formattedDate} Temp: ${forecastData.main.temp} °F, Wind: ${forecastData.wind.speed} MPH, Humidity: ${forecastData.main.humidity} %`;
+
+  // Append the forecastBox to the .forecast-div
+  forecastDiv.appendChild(forecastBox);
+}
+
     });
 }
 
