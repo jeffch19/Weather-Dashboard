@@ -67,7 +67,7 @@ function getFiveDayForecast(city) {
         var forecastData = data.list[i];
         var forecastBox = document.createElement('div');
         forecastBox.className = 'forecast-box';
-        forecastBox.textContent = `Temp: ${forecastData.main.temp} °F, Wind: ${forecastData.wind.speed} MPH, Humidity: ${forecastData.main.humidity} %`;
+        forecastBox.textContent = `${formattedDate} Temp: ${forecastData.main.temp} °F, Wind: ${forecastData.wind.speed} MPH, Humidity: ${forecastData.main.humidity} %`;
         forecastDiv.appendChild(forecastBox);
       }
     });
