@@ -105,13 +105,14 @@
 /* 5 day forecast content */
 .forecast-div {
   display: inline-flex;
+  color: white;
 }
 /* boxes containing the forecast */
 .forecast-box {
   width: 100%; /* Adjust the width as needed */
   margin: 0 1%; /* Add spacing between the boxes */
   height: 100px; /* Set a fixed height or adjust as needed */
-  background-color: darkgrey; /* Set the background color to dark grey */
+  background-color: rgb(62, 62, 80); /* Set the background color to dark grey */
 }
 
 /* size of the 5 day forecast header */
