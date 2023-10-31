@@ -11,7 +11,7 @@ Use this webpage to search a city of your choice and check out the 5 day weather
 
 ## Usage
 
-Link to webpage: 
+Link to webpage: https://jeffch19.github.io/Weather-Dashboard/ 
 
 ![alt text](./weather-image.jpg)
 
