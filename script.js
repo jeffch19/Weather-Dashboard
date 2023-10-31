@@ -78,7 +78,7 @@ $(document).ready(function() {
       weatherIcon.src = `http://openweathermap.org/img/w/${iconCode}.png`;
 
       // Append the weather icon and date to the capital-weather-display
-      var capitalWeatherDisplay = document.querySelector('.capital-weather-display');
+      var capitalWeatherDisplay = document.querySelector('.info-div');
      
       capitalWeatherDisplay.appendChild(weatherIcon); // Add the weather icon
       
