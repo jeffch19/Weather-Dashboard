@@ -71,9 +71,24 @@ $(document).ready(function() {
         console.log('fetch response \n------');
         console.log(data);
         cityName.textContent = `${data.name} - ${formattedDate}`;
+
+              // Create an img element for the weather icon
+      var weatherIcon = document.createElement('img');
+      var iconCode = data.weather[0].icon;
+      weatherIcon.src = `http://openweathermap.org/img/w/${iconCode}.png`;
+
+      // Append the weather icon and date to the capital-weather-display
+      var capitalWeatherDisplay = document.querySelector('.capital-weather-display');
+     
+      capitalWeatherDisplay.appendChild(weatherIcon); // Add the weather icon
+      
+      
+
+
         temp.textContent = `Temp: ${data.main.temp} °F`;
         wind.textContent = `Wind: ${data.wind.speed} MPH`;
         humidity.textContent = `Humidity: ${data.main.humidity} %`;
+
       });
   }
 
