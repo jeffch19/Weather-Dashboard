@@ -3,7 +3,7 @@
 
 ## Description
 
-Use this webpage to search a city of your choice and check out the 5 day weather forecast!
+Use this webpage to search a city of your choice and check out the 5 day weather forecast! The page includes use of local storage as well if you would like to see previously searched cities.
 
 
 
