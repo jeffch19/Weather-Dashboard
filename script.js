@@ -7,6 +7,7 @@ $(document).ready(function() {
   const humidity = document.getElementById('humidity');
   const searchBtn = document.getElementById('search-btn');
   const apiKey = '3b8d60dee3567443738880c9e96f75d9';
+  
 
   // Get the current date
   const currentDate = new Date();
@@ -103,8 +104,11 @@ $(document).ready(function() {
           forecastBox.className = 'forecast-box';
 
           // Create separate elements for date, temperature, wind, and humidity
-          var dateElement = document.createElement('p');
+          var dateElement = document.createElement('h5');
           dateElement.textContent = ` ${formattedDate}`;
+          var weatherIcon = document.createElement('img');
+        var iconCode = forecastData.weather[0].icon;
+        weatherIcon.src = `http://openweathermap.org/img/w/${iconCode}.png`;
           var tempElement = document.createElement('p');
           tempElement.textContent = `Temp: ${forecastData.main.temp} °F`;
           var windElement = document.createElement('p');
@@ -114,6 +118,7 @@ $(document).ready(function() {
 
           // Append these elements to the forecastBox
           forecastBox.appendChild(dateElement);
+          forecastBox.appendChild(weatherIcon);
           forecastBox.appendChild(tempElement);
           forecastBox.appendChild(windElement);
           forecastBox.appendChild(humidityElement);

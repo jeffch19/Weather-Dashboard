@@ -111,7 +111,7 @@
 .forecast-box {
   width: 100%; /* Adjust the width as needed */
   margin: 0 1%; /* Add spacing between the boxes */
-  height: 190px; /* Set a fixed height or adjust as needed */
+  height: 250px; /* Set a fixed height or adjust as needed */
   background-color: rgb(62, 62, 80); /* Set the background color to dark grey */
   padding: 8px;
 }
