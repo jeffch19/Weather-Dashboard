@@ -16,6 +16,43 @@ const formattedDate = `${month}/${day}/${year}`;
 var apiKey = '3b8d60dee3567443738880c9e96f75d9'
 var searchBtn = document.getElementById('search-btn');
 // var cities = ['Atlanta','Denver', 'Seattle', 'San Francisco','Orlando','New York', 'Chicago','Austin'];
+//set up local storage
+var recentlySearchedCities = [];
+
+if (localStorage.getItem('recentCities')) {
+  recentlySearchedCities = JSON.parse(localStorage.getItem('recentCities'));
+  renderRecentlySearchedCities();
+}
+
+// Function to add a city to the recently searched list
+function addToRecentlySearched(city) {
+  if (!recentlySearchedCities.includes(city)) {
+    recentlySearchedCities.push(city);
+    localStorage.setItem('recentCities', JSON.stringify(recentlySearchedCities));
+    renderRecentlySearchedCities();
+  }
+}
+
+// Function to render recently searched cities as buttons
+function renderRecentlySearchedCities() {
+  var bottomDiv = document.querySelector('.bottom-div');
+  bottomDiv.innerHTML = '';
+
+  recentlySearchedCities.forEach(function(city) {
+    var cityButton = document.createElement('button');
+    cityButton.textContent = city;
+    cityButton.className = 'recent-city-button btn-spacing';
+
+    cityButton.addEventListener('click', function() {
+      // When a recently searched city button is clicked, search for it again
+      getWeatherData(city);
+      getFiveDayForecast(city);
+    });
+
+    bottomDiv.appendChild(cityButton);
+  });
+}
+//end of local storage
 // geo code api
 // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 
@@ -96,6 +133,7 @@ document.querySelector('.search-bar').value='';
 getWeatherData(searchCity);
 getFiveDayForecast(searchCity);
 // get 5 day search city
+addToRecentlySearched(searchCity);
 });
 
 
